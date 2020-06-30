@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>MediShip | Book your shipment</title>
+    <meta content="" name="descriptison">
+    <meta content="" name="keywords">
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+    <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <style>
+    #bg-div {
+    margin: 0;
+    margin-top: 100px;
+    margin-bottom: 100px
+    }
+    #border-btm {
+    padding-bottom: 20px;
+    margin-bottom: 0px;
+    box-shadow: 0px 35px 2px -35px lightgray
+    }
+    #test {
+    margin-top: 0px;
+    margin-bottom: 40px;
+    border: 1px solid #FFE082;
+    border-radius: 0.25rem;
+    width: 60px;
+    height: 30px;
+    background-color: #FFECB3
+    }
+    .active1 {
+    color: #31BBAD  !important;
+    font-weight: bold
+    }
+    .bar4 {
+    width: 35px;
+    height: 5px;
+    background-color: #ffffff;
+    margin: 6px 0
+    }
+    .list-group .tabs {
+    color: #000000
+    }
+    #menu-toggle {
+    height: 50px
+    }
+    #new-label {
+    padding: 2px;
+    font-size: 10px;
+    font-weight: bold;
+    background-color: red;
+    color: #ffffff;
+    border-radius: 5px;
+    margin-left: 5px
+    }
+    #sidebar-wrapper {
+    min-height: 100vh;
+    margin-left: -15rem;
+    -webkit-transition: margin .25s ease-out;
+    -moz-transition: margin .25s ease-out;
+    -o-transition: margin .25s ease-out;
+    transition: margin .25s ease-out
+    }
+    #sidebar-wrapper .sidebar-heading {
+    padding: 0.875rem 1.25rem;
+    font-size: 1.2rem
+    }
+    #sidebar-wrapper .list-group {
+    width: 15rem
+    }
+    #page-content-wrapper {
+    min-width: 100vw;
+    padding-left: 20px;
+    padding-right: 20px
+    }
+    #wrapper.toggled #sidebar-wrapper {
+    margin-left: 0
+    }
+    .list-group-item.active {
+    z-index: 2;
+    color: #fff;
+    background-color: #fff !important;
+    border-color: #fff !important
+    }
+    @media (min-width: 768px) {
+    #sidebar-wrapper {
+    margin-left: 0
+    }
+    #page-content-wrapper {
+    min-width: 0;
+    width: 100%
+    }
+    #wrapper.toggled #sidebar-wrapper {
+    margin-left: -15rem;
+    display: none
+    }
+    }
+    .card0 {
+    margin-top: 10px;
+    margin-bottom: 10px
+    }
+    .top-highlight {
+    color: #2C8078;
+    font-weight: bold;
+    font-size: 20px
+    }
+    .form-card input,
+    .form-card textarea {
+    padding: 10px 15px 5px 15px;
+    border: none;
+    border: 1px solid lightgrey;
+    border-radius: 6px;
+    margin-bottom: 25px;
+    margin-top: 2px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: arial;
+    color: #2C3E50;
+    font-size: 14px;
+    letter-spacing: 1px
+    }
+    .form-card input:focus,
+    .form-card textarea:focus {
+    -moz-box-shadow: 0px 0px 0px 1.5px skyblue !important;
+    -webkit-box-shadow: 0px 0px 0px 1.5px skyblue !important;
+    box-shadow: 0px 0px 0px 1.5px skyblue !important;
+    font-weight: bold;
+    border: 1px solid skyblue;
+    outline-width: 0
+    }
+    input.btn-success {
+    height: 50px;
+    color: #ffffff;
+    opacity: 0.9
+    }
+    #below-btn a {
+    font-weight: bold;
+    color: #000000
+    }
+    .input-group {
+    position: relative;
+    width: 100%;
+    overflow: hidden
+    }
+    .input-group input {
+    position: relative;
+    height: 90px;
+    margin-left: 1px;
+    margin-right: 1px;
+    border-radius: 6px;
+    padding-top: 30px;
+    padding-left: 25px
+    }
+    .input-group textarea {
+    position: relative;
+    height: 90px;
+    margin-left: 1px;
+    margin-right: 1px;
+    border-radius: 6px;
+    padding-top: 30px;
+    padding-left: 25px
+    }
+    .input-group label {
+    position: absolute;
+    height: 24px;
+    background: none;
+    border-radius: 6px;
+    line-height: 48px;
+    font-size: 15px;
+    color: gray;
+    width: 100%;
+    font-weight: 100;
+    padding-left: 25px
+    }
+    input:focus+label {
+    color: #1E88E5;
+    }
+    #qr {
+    margin-bottom: 150px;
+    margin-top: 50px
+    }
+    .btn-success {
+    background-color: #2C8078;
+    }
+    </style>
+  </head>
+  <body>
+    
+    <!-- ======= Top Bar ======= -->
+    <div id="topbar" class="d-none d-lg-flex align-items-center fixed-top">
+      <div class="container d-flex">
+        <div class="contact-info mr-auto">
+          <i class="icofont-envelope"></i> <a href="mailto:contact@example.com">support@mediship.in</a>
+          <i class="icofont-phone"></i> +91 9898989898
+          <i class="icofont-google-map"></i> A108 Bangalore
+        </div>
+        <div class="social-links">
+          <a href="#" class="twitter"><i class="icofont-twitter"></i></a>
+          <a href="#" class="facebook"><i class="icofont-facebook"></i></a>
+          <a href="#" class="instagram"><i class="icofont-instagram"></i></a>
+          <a href="#" class="skype"><i class="icofont-skype"></i></a>
+          <a href="#" class="linkedin"><i class="icofont-linkedin"></i></i></a>
+        </div>
+      </div>
+    </div>
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top">
+      <div class="container d-flex align-items-center">
+        <h1 class="logo mr-auto"><a href="index.html">MediShip.</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+        <nav class="nav-menu d-none d-lg-block">
+          <ul>
+            <li class="active"><a href="index.html">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <!-- <li><a href="#services">Services</a></li> -->
+            <li><a href="#faq">FAQs</a></li>
+            <!-- <li><a href="#doctors">Doctors</a></li> -->
+            
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+          </nav><!-- .nav-menu -->
+          <a href="#" id="book-shipment" class="appointment-btn scrollto">Book your Shipment</a>
+          <!--       <button type="button" class="btn appointment-btn scrollto" data-toggle="modal" data-target="#modalCookie1">Book your Shipment</button> -->
+        </div>
+        </header><!-- End Header -->
+        <main id="main">
+          <!-- ======= Breadcrumbs Section ======= -->
+          <section class="breadcrumbs">
+            <div class="container">
+              <div class="d-flex justify-content-between align-items-center">
+                <h2>Book Your Shipment</h2>
+                <ol>
+                  <li><a href="index.html">Home</a></li>
+                  <li>Booking</li>
+                </ol>
+              </div>
+            </div>
+            </section><!-- End Breadcrumbs Section -->
+            <section class="inner-page">
+              <div class="container-fluid px-0" id="bg-div">
+                <div class="row justify-content-center">
+                  <div class="col-lg-9 col-12">
+                    <div class="card card0">
+                      <div class="d-flex" id="wrapper">
+                        <!-- Sidebar -->
+                        <div class="bg-light border-right" id="sidebar-wrapper">
+                          <div class="sidebar-heading pt-5 pb-4"><strong>Shipment Methods</strong></div>
+                          <div class="list-group list-group-flush"> <a data-toggle="tab" href="#menu1" id="tab1" class="tabs list-group-item bg-light">
+                            <div class="list-div my-2">
+                              <div class="fa fa-home"></div> &nbsp;&nbsp; Method 1
+                            </div>
+                          </a> <a data-toggle="tab" href="#menu2" id="tab2" class="tabs list-group-item active1">
+                          <div class="list-div my-2">
+                            <div class="fa fa-credit-card"></div> &nbsp;&nbsp; Method 2
+                          </div>
+                        </a>  </div>
+                        </div> <!-- Page Content -->
+                        <div id="page-content-wrapper">
+                          <div class="row pt-3" id="border-btm">
+                            <div class="col-4"> <button class="btn btn-success mt-4 ml-3 mb-3" id="menu-toggle">
+                              <div class="bar4"></div>
+                              <div class="bar4"></div>
+                              <div class="bar4"></div>
+                            </button> </div>
+                            <div class="col-8">
+                              <div class="row justify-content-right">
+                                <div class="col-12">
+                                  <p class="mb-0 mr-4 mt-4 text-right">support@mediship.com</p>
+                                </div>
+                              </div>
+                              <div class="row justify-content-right">
+                                <div class="col-12">
+                                  <!-- <p class="mb-0 mr-4 text-right">Pay <span class="top-highlight">$ 100</span> </p> -->
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row justify-content-center">
+                            <div class="text-center" id="test">Book</div>
+                          </div>
+                          <div class="tab-content">
+                            <div id="menu1" class="tab-pane">
+                              <div class="row justify-content-center">
+                                <div class="col-11">
+                                  <div class="form-card">
+                                    <h3 class="mt-0 mb-4 text-center">Enter your shipment Details</h3>
+                                    <form>
+                                      <div class="row">
+                                        <div class="col-12">
+                                          <div class="input-group"> <input type="text" id="full_name" placeholder="Full Name"> <label>Full Name</label> </div>
+                                        </div>
+                                      </div>
+                                      <div class="row">
+                                        <div class="col-12">
+                                          <div class="input-group"> <input type="email" id="email" placeholder="john@gmail.com"> <label>Email id</label> </div>
+                                        </div>
+                                        <div class="col-12">
+                                          <div class="input-group"> <input type="text" id="full_name" placeholder="+91 9191919191"> <label>Contact</label> </div>
+                                        </div>
+                                      </div>
+                                      <div class="row">
+                                        <div class="col-12">
+                                          <div class="input-group"> <textarea name="to_address" id="to_address"  class="" placeholder=""></textarea> <label>To Address</label> </div>
+                                        </div>
+                                      </div>
+                                      <div class="row">
+                                        <div class="col-12">
+                                          <div class="input-group"> <textarea name="from_address" id="from_address"  class="" placeholder=""></textarea> <label>From Address</label> </div>
+                                        </div>
+                                      </div>
+                                      <div class="row">
+                                        <div class="col-12">
+                                          <div class="input-group"> <textarea name="prescription"  cols="30" rows="6" id="prescription"  class=""
+                                           placeholder=""></textarea> <label>Prescription</label> </div>
+                                        </div>
+                                      </div>
+                                      <div class="row">
+                                        <div class="col-12">
+                                          <div class="input-group"> <input type="file" id="pres_image"  name="pres_image"><label>Attach Prescription</label> </div>
+                                        </div>
+                                      </div>
+                                      <div class="row">
+                                        <div class="col-md-12"> <input type="submit" value="Book your Shipment" class="btn btn-success placeicon"> </div>
+                                      </div>
+                                    </form>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div id="menu2" class="tab-pane in active">
+                              <div class="row justify-content-center">
+                                <div class="col-11">
+                                  <div class="form-card">
+                                    <h3 class="mt-0 mb-4 text-center">Enter your shipment Details</h3>
+                                    <form>
+                                      <div class="row">
+                                        <div class="col-12">
+                                          <div class="input-group"> <input type="text" id="full_name" placeholder="Full Name"> <label>Full Name</label> </div>
+                                        </div>
+                                      </div>
+                                      <div class="row">
+                                        <div class="col-12">
+                                          <div class="input-group"> <input type="email" id="email" placeholder="john@gmail.com"> <label>Email id</label> </div>
+                                        </div>
+                                        <div class="col-12">
+                                          <div class="input-group"> <input type="text" id="full_name" placeholder="+91 9191919191"> <label>Contact</label> </div>
+                                        </div>
+                                      </div>
+                                      <div class="row">
+                                        <div class="col-12">
+                                          <div class="input-group"> <textarea name="to_address" id="to_address"  class="" placeholder=""></textarea> <label>To Address</label> </div>
+                                        </div>
+                                      </div>
+                                      <div class="row">
+                                        <div class="col-12">
+                                          <div class="input-group"> <textarea name="prescription"  cols="30" rows="6" id="prescription"  class=""
+                                           placeholder=""></textarea> <label>Prescription</label> </div>
+                                        </div>
+                                      </div>
+                                      <div class="row">
+                                        <div class="col-12">
+                                          <div class="input-group"> <input type="file" id="pres_image"  name="pres_image"><label>Attach Prescription</label> </div>
+                                        </div>
+                                      </div>
+                                      <div class="row">
+                                        <div class="col-md-12"> <input type="submit" value="Book your Shipment" class="btn btn-success placeicon"> </div>
+                                      </div>
+                                    </form>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            </main><!-- End #main -->
+            <!-- ======= Footer ======= -->
+            <footer id="footer">
+              <div class="footer-top">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-lg-3 col-md-6 footer-contact">
+                      <h3>MediShip</h3>
+                      <p>
+                        A108 Indira Nagar <br>
+                        Bangalore<br>
+                        India <br><br>
+                        <strong>Phone:</strong> +91 9898989898<br>
+                        <strong>Email:</strong> support@mediship.in<br>
+                      </p>
+                    </div>
+                    <div class="col-lg-2 col-md-6 footer-links">
+                      <h4>Useful Links</h4>
+                      <ul>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">FAQs</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Contact Us</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Book your Shipment</a></li>
+                      </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-6 footer-links">
+                      <h4>Our Policies</h4>
+                      <ul>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Shipping Policy</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">More Policies</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">More Policies</a></li>
+                      </ul>
+                    </div>
+                    <div class="col-lg-4 col-md-6 footer-newsletter">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="container d-md-flex py-4">
+                <div class="mr-md-auto text-center text-md-left">
+                </div>
+                <div class="social-links text-center text-md-right pt-3 pt-md-0">
+                  <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                  <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                  <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                  <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                  <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                </div>
+              </div>
+              </footer><!-- End Footer -->
+              <div id="preloader"></div>
+              <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+              <!-- Vendor JS Files -->
+              <script src="assets/vendor/jquery/jquery.min.js"></script>
+              <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+              <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+              <script src="assets/vendor/php-email-form/validate.js"></script>
+              <script src="assets/vendor/venobox/venobox.min.js"></script>
+              <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+              <script src="assets/vendor/counterup/counterup.min.js"></script>
+              <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+              <script src="assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+              <!-- Template Main JS File -->
+              <script src="assets/js/main.js"></script>
+              <script type="text/javascript">
+              $(document).ready(function(){
+              //Menu Toggle Script
+              $("#menu-toggle").click(function(e) {
+              e.preventDefault();
+              $("#wrapper").toggleClass("toggled");
+              });
+              // For highlighting activated tabs
+              $("#tab1").click(function () {
+              $(".tabs").removeClass("active1");
+              $(".tabs").addClass("bg-light");
+              $("#tab1").addClass("active1");
+              $("#tab1").removeClass("bg-light");
+              });
+              $("#tab2").click(function () {
+              $(".tabs").removeClass("active1");
+              $(".tabs").addClass("bg-light");
+              $("#tab2").addClass("active1");
+              $("#tab2").removeClass("bg-light");
+              });
+              $("#tab3").click(function () {
+              $(".tabs").removeClass("active1");
+              $(".tabs").addClass("bg-light");
+              $("#tab3").addClass("active1");
+              $("#tab3").removeClass("bg-light");
+              });
+              })</script>
+            </body>
+          </html>
