@@ -915,6 +915,129 @@ section {
   font-size: 14px;
 }
 
+
+/*--------------------------------------------------------------
+# New Order
+--------------------------------------------------------------*/
+.new_order {
+  background: #dcf7f4;
+  padding: 70px 0 60px;
+}
+
+.order-box{
+  background: #FFFFFF;
+  border-radius: 15px;
+}
+
+.order-box-navs{
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  background: #1fb5a6;
+}
+  .order-box-navs li{
+    flex:1;
+    padding: 15px 20px 0 20px;
+  }
+  .order-box-navs li a{
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    display: block;
+    padding:20px 30px 15px 30px ;
+    color:white;
+  }
+  .order-box-navs li a.active{
+    background: #FFFFFF;
+    color: #444444;
+  }
+  .order-box-navs li h5{
+    font-size: 16px;
+    font-weight: bold;
+    color: inherit;
+    line-height: 36px;
+    margin-bottom: 0;
+  }
+  .order-box-navs .icon {
+      float: left;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right:15px; 
+      transition: 0.5s;
+  }
+  .order-box-navs .icon i {
+    font-size: 36px;
+  }
+
+.order-box-tab{
+  padding: 50px 40px;
+}
+  .order-box-desc{
+    padding: 20px 30px;
+    color: #008080; 
+  }
+
+  .order-box-desc .icon{
+    font-size: 80px;
+  }
+  .order-box-desc h4{
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .order-box-desc p{
+    font-size: 14px;
+    padding: 0 20px;
+    color:#666666;
+  }
+
+  .order-form label{
+    font-size: 13 px;
+    font-weight: bold;
+    display: block;
+  }
+  .order-form input,.order-form textarea{
+    width: 100%;
+    display: block;
+    background: #f3f3f3;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    padding: 5px 12px;
+    outline: none;
+  }
+  .order-form input:focus{
+    border: 2px solid #008080; 
+  }
+
+
+  .order-form textarea{
+    min-height: 100px;
+  }
+
+  
+  .order-form button {
+    font-family: "Raleway", sans-serif;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    display: inline-block;
+    padding: 8px 28px;
+    border-radius: 50px;
+    transition: 0.5s;
+    color: #1fb5a6;
+    background: : transparent;
+    border: 2px solid #1fb5a6;
+  }
+
+  .order-form button:hover {
+    background: #18968a;
+    color: white;
+  }  
+
 /*--------------------------------------------------------------
 # Services
 --------------------------------------------------------------*/
