@@ -481,17 +481,20 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
   font-size: 14px;
   letter-spacing: 1px;
+  font-weight: bold;
   display: inline-block;
   padding: 12px 35px;
   margin-top: 30px;
   border-radius: 50px;
   transition: 0.5s;
-  color: #fff;
-  background: #1fb5a6;
+  color: #1fb5a6;
+  background: : transparent;
+  border: 2px solid #1fb5a6;
 }
 
 #hero .btn-get-started:hover {
   background: #18968a;
+  color: white;
 }
 
 @media (min-width: 1024px) {
@@ -1437,14 +1440,16 @@ section {
 .contact .info {
   width: 100%;
   background: #fff;
+  text-align: center;
 }
 
 .contact .info i {
   font-size: 20px;
   color: #1fb5a6;
-  float: left;
+  /*float: left;*/
   width: 44px;
   height: 44px;
+  margin: 0 auto;
   background: #d6e9fa;
   display: flex;
   justify-content: center;
@@ -1454,7 +1459,7 @@ section {
 }
 
 .contact .info h4 {
-  padding: 0 0 0 60px;
+  /*padding: 0 0 0 60px;*/
   font-size: 22px;
   font-weight: 600;
   margin-bottom: 5px;
@@ -1462,15 +1467,15 @@ section {
 }
 
 .contact .info p {
-  padding: 0 0 0 60px;
+  /*padding: 0 0 0 60px;*/
   margin-bottom: 0;
   font-size: 14px;
   color: #18968a;
 }
-
+/*
 .contact .info .email, .contact .info .phone {
   margin-top: 40px;
-}
+}*/
 
 .contact .info .email:hover i, .contact .info .address:hover i, .contact .info .phone:hover i {
   background: #18968a;
