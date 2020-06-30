@@ -171,3 +171,6 @@
     .btn-success {
     background-color: #2C8078;
     }
+        .btn-success:hover, .btn-success:active {
+    background-color: #38A89D;
+    }
