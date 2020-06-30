@@ -22,16 +22,16 @@
     font-weight: bold
     }
     .bar4 {
-    width: 35px;
-    height: 5px;
+    width: 15px;
+    height: 2.5px;
     background-color: #ffffff;
-    margin: 6px 0
+    margin: 3px -2px;
     }
     .list-group .tabs {
     color: #000000
     }
     #menu-toggle {
-    height: 50px
+    height: 32px
     }
     #new-label {
     padding: 2px;
