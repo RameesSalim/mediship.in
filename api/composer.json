@@ -1,0 +1,6 @@
+{
+    "require": {
+        "phpmailer/phpmailer": "^6.1",
+        "delight-im/file-upload": "^1.2"
+    }
+}
