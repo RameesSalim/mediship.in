@@ -1871,3 +1871,9 @@ section {
 
 
 
+@media only screen and (max-width: 600px) {
+    .back-to-top{
+        display: none;
+    }
+}
+
