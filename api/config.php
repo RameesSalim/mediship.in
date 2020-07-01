@@ -6,9 +6,9 @@
 	use PHPMailer\PHPMailer\Exception;
 
 
-	define('SITE_URL','http://localhost:2332');
-	define('GMAIL_ADDR','http://localhost:2332');
-	define('GMAIL_PWD','http://localhost:2332');
+	define('SITE_URL','mediship.in');
+	define('GMAIL_ADDR','medishipauto@gmail.com');
+	define('GMAIL_PWD','medimediship');
 
 
 	$mail = new PHPMailer(true);
@@ -25,6 +25,7 @@
 
 	$mail->setFrom($adminFromAddress, 'Medship.in Admin');
     $mail->addAddress('shameelsadaka@gmail.com', 'Shameel K');
+    $mail->addAddress('salim.ramees@gmail.com', 'Ramees Salim');
 
  	$mail->isHTML(true);
 
@@ -33,7 +34,7 @@
     
  	function generateMailBody($params){
  		$html = "New Order Request at mediship.in<br/><br/>";
- 		$html .= "<table border=\"1\" cellpadding=\"3\" cellspacing=\"1\" width=\"100%\">";
+ 		$html .= "<table border=\"1\" cellpadding=\"8\" cellspacing=\"1\" width=\"100%\">";
 		foreach ($params as $key => $value) {
 			$html .= "  <tr align='left'>";
 			$html .= "  <th width=\"30%\">".$key."</th>";

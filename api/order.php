@@ -38,6 +38,14 @@
 
 
 			$params = Array();
+
+			if(isset($_POST['from_country'],$_POST['from_address'])){
+				$params['Method'] = '<h3>Procure & Ship</h3>';
+			}
+			else{
+				$params['Method'] = '<h3>Ship Your Medicine</h3>';				
+			}
+
 			$params['Name'] = $_POST['name'];
 			$params['Email'] = $_POST['email'];
 			$params['Contact'] = $_POST['contact'];
