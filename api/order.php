@@ -7,13 +7,12 @@
 		name
 		email
 		contact
-		to_country
 		to_address
 		img (Prescription Image)
 
 	
 		@Optional
-		from_country & from_address
+		from_address
 		prescription_text
 
 	*/
@@ -23,7 +22,6 @@
 		$_POST['name'],
 		$_POST['email'],
 		$_POST['contact'],
-		$_POST['to_country'],
 		$_POST['to_address']
 	)){
 		$upload = new \Delight\FileUpload\FileUpload();
@@ -39,7 +37,7 @@
 
 			$params = Array();
 
-			if(isset($_POST['from_country'],$_POST['from_address'])){
+			if(isset($_POST['from_address'])){
 				$params['Method'] = '<h3>Procure & Ship</h3>';
 			}
 			else{
@@ -50,13 +48,10 @@
 			$params['Email'] = $_POST['email'];
 			$params['Contact'] = $_POST['contact'];
 
-			if(isset($_POST['from_country'],$_POST['from_address'])){
-				$params['From Country'] = $_POST['from_country'];
-				$params['From Address'] = $_POST['from_address'];				
+			if(isset($_POST['from_address'])){
+				$params['From Address'] = nl2br($_POST['from_address']);				
 			}
-
-			$params['Target Country'] = $_POST['to_country'];
-			$params['Target Address'] = $_POST['to_address'];
+			$params['Destination Address'] = nl2br($_POST['to_address']);
 
 			$params['Uploaded Prescription'] = "<a href='".SITE_URL.'/api/uploads/'.$filename."'>Download</a>";
 
@@ -64,21 +59,19 @@
 				$params['Prescription Text'] = $_POST['prescription_text'];
 			}			
     		
-
 		    $mail->addAttachment('uploads/'.$filename,'Prescription.jpg');    // Optional name
 
     		$mail->Body = generateMailBody($params);
 
 
-
     		try{	
 			    $mail->send();
-    			die(json_encode(["errors"=>0,"message"=>"Order submitted succesfully"]));
+    			die(json_encode(["errors"=>0,"message"=>"Order submitted succesfully! We will contact you soon."]));
     		}
     		catch(Exception $e){
 
 				die(json_encode(["errors"=>1,"message"=>"Could't send mail","error_detail"=>$e->getMessage()]));	
-}
+}	
 
 
 
@@ -93,16 +86,14 @@
 			die(json_encode(["errors"=>1,"message"=>"Invalid File Extension"]));
 		}
 		catch (\Delight\FileUpload\Throwable\FileTooLargeException $e) {
-			die(json_encode(["errors"=>1,"message"=>"File is too large"]));
+			die(json_encode(["errors"=>1,"message"=>"Uploaded Prescription file is too large"]));
 		}
 		catch(Exception $e){
-			print_r($e);
-			die(json_encode(["errors"=>1,"message"=>"Some error occuredd"]));
+			die(json_encode(["errors"=>1,"message"=>"Some error occured"]));
 		}
 	}
 	else{
-		print_r($_POST);
-		die(json_encode(["errors"=>1,"message"=>"Some required fields are not sent"]));
+		die(json_encode(["errors"=>2,"message"=>"Some required fields are not sent"]));
 	}
 	
 ?>

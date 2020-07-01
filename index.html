@@ -278,56 +278,57 @@
                           </div>
                         </div>
                         <div class="col-md-8">
-                          <form class="order-form">
+                          <form class="order-form"  method="post" enctype="multipart/form-data">
 
                             <div class="row">
                               <div class="col-md-4">
-                                  <label for="fullname">
+                                  <label for="name">
                                      Name *
                                   </label>
-                                  <input type="fullname" id="fullname" aria-describedby="fullname">
+                                  <input type="name" name="name" id="name" aria-describedby="name" required="required">
                               </div>
                               <div class="col-md-4">
-                                  <label for="fullname">
+                                  <label for="email">
                                     Email *
                                   </label>
-                                  <input type="fullname" id="fullname" aria-describedby="fullname">
+                                  <input type="email" name="email" id="email" aria-describedby="email" required="required">
                               </div>
                               <div class="col-md-4">
-                                  <label for="fullname">
+                                  <label for="contact">
                                     Contact Number *
                                   </label>
-                                  <input type="fullname" id="fullname" aria-describedby="fullname">
+                                  <input type="contact" name="contact" id="contact" aria-describedby="contact" required="required">
                               </div>
                             </div>
 
                             <div class="row mt-4">
                               <div class="col-md-6">
-                                  <label for="fullname">
+                                  <label for="from_address">
                                     From Address *
                                   </label>
-                                  <textarea></textarea>
+                                  <textarea name="from_address" id="from_address" required="required"></textarea>
                               </div>
                               <div class="col-md-6">
                                   <label for="fullname">
                                     Delivery Address *
                                   </label>
-                                  <textarea></textarea>
+                                  <textarea name="to_address" id="to_address" required="required"></textarea>
                               </div>
                             </div>
                             <div class="row mt-4">
                               <div class="col-md-6">
-                                  <label for="fullname">Prescription</label>
-                                  <textarea></textarea>
+                                  <label for="prescription_text">Prescription</label>
+                                  <textarea id="prescription_text" name="prescription_text"></textarea>
                               </div>
                               <div class="col-md-6">
-                                  <label for="fullname">Attatch Prescription *</label>
-                                  <input type="file" name="" style="background: transparent;">
+                                  <label for="img" required="required">Attatch Prescription *</label>
+                                  <input type="file" id="img" name="img" style="background: transparent;">
                               </div>
                             </div>
 
-                            <div class="row mt-5">
+                            <div class="row mt-4">
                               <div class="col-md-12 text-center">
+                                <span class="status-display mb-3" style="font-weight: bold"></span><br/><br/>
                                 <button type="submit" class="btn btn-default">Submit</button>
                               </div>
                             </div>
@@ -352,50 +353,51 @@
                           </div>
                         </div>
                         <div class="col-md-8">
-                          <form class="order-form">
+                          <form class="order-form" method="post" enctype="multipart/form-data">
 
                             <div class="row">
                               <div class="col-md-4">
-                                  <label for="fullname">
+                                  <label for="name">
                                      Name *
                                   </label>
-                                  <input type="fullname" id="fullname" aria-describedby="fullname">
+                                  <input type="name" name="name" id="name" aria-describedby="name" required="required">
                               </div>
                               <div class="col-md-4">
-                                  <label for="fullname">
+                                  <label for="email">
                                     Email *
                                   </label>
-                                  <input type="fullname" id="fullname" aria-describedby="fullname">
+                                  <input type="email" name="email" id="email" aria-describedby="email" required="required">
                               </div>
                               <div class="col-md-4">
-                                  <label for="fullname">
+                                  <label for="contact">
                                     Contact Number *
                                   </label>
-                                  <input type="fullname" id="fullname" aria-describedby="fullname">
+                                  <input type="contact" name="contact" id="contact" aria-describedby="contact" required="required">
                               </div>
                             </div>
 
                             <div class="row mt-4">
                               <div class="col-md-8">
-                                  <label for="fullname">
+                                  <label for="to_address" required="required">
                                     Delivery Address *
                                   </label>
-                                  <textarea></textarea>
+                                  <textarea id="to_address" name="to_address"></textarea>
                               </div>
                             </div>
                             <div class="row mt-4">
                               <div class="col-md-6">
-                                  <label for="fullname">Prescription</label>
-                                  <textarea></textarea>
+                                  <label for="prescription_text">Prescription</label>
+                                  <textarea id="prescription_text" name="prescription_text"></textarea>
                               </div>
                               <div class="col-md-6">
-                                  <label for="fullname">Attatch Prescription *</label>
-                                  <input type="file" name="" style="background: transparent;">
+                                  <label for="img">Attatch Prescription *</label>
+                                  <input type="file" name="img" id="img" style="background: transparent;" required="required">
                               </div>
                             </div>
 
-                            <div class="row mt-5">
+                            <div class="row mt-4">
                               <div class="col-md-12 text-center">
+                                <span class="status-display mb-3" style="font-weight: bold"></span><br/><br/>
                                 <button type="submit" class="btn btn-default">Submit</button>
                               </div>
                             </div>
@@ -740,6 +742,41 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
+  <script>
+    $(document).ready(function(){
+      $("form.order-form").submit(function(e) {
+
+
+          e.preventDefault();    
+          $status = $(this).find(".status-display").html("<div class=\"spinner-border  spinner-border-sm mr-2\" role=\"status\"><span class=\"sr-only\"> Loading...</span></div> Sending...").css("color","#008080");
+
+          $button = $(this).find("button[type=submit]").hide();
+
+          var formData = new FormData(this);
+
+          $.ajax({
+              url: 'api/order.php',
+              type: 'POST',
+              data: formData,
+              success: function (data) {
+                $status.html(data.message).css("color",data.errors==0?"#1fb570":"#CC0000");
+                if(data.errors==1){
+                  $button.fadeIn();
+                }
+              },
+              error:function(e){
+                console.log(e);
+                $status.html("Some Error Occured").css("color","#CC0000");
+                $button.fadeIn();
+              },
+              cache: false,
+              dataType:"json",
+              contentType: false,
+              processData: false
+          });
+      });
+    });
+  </script>
 </body>
 
 </html>
