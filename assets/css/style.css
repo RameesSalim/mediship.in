@@ -778,7 +778,7 @@ section {
 
 .about .video-box {
   background: url("../img/bg-2-black.jpg") center center no-repeat;
-  background-size: cover;
+  background-size: contain;
   min-height: 500px;
 }
 
