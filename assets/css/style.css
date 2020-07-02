@@ -1875,5 +1875,9 @@ section {
     .back-to-top{
         display: none;
     }
+      .order-box-navs .icon {
+    display: none;
+  }
+
 }
 
