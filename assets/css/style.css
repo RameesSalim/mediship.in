@@ -1398,7 +1398,7 @@ section {
   display: block;
   position: relative;
   font-family: "Poppins", sans-serif;
-  font-size: 16px;
+  font-size: 20px;
   line-height: 24px;
   font-weight: 500;
   padding: 0 30px;
@@ -1881,3 +1881,40 @@ section {
 
 }
 
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+
+
+.accordion-section .panel-default > .panel-heading {
+    border: 0;
+    border-radius: 30px;
+    background: #f4f4f4;
+    padding: 0;
+}
+.accordion-section .panel-default .panel-title a {
+display: block;
+position: relative;
+font-family: "Poppins", sans-serif;
+font-size: 16px;
+line-height: 24px;
+font-weight: 500;
+padding: 0 30px;
+outline: none;
+}
+.accordion-section .panel-default .panel-title a:after {
+    font-family: 'FontAwesome';
+    font-style: normal;
+    font-size: 3rem;
+    /*content: "\f106";*/
+    color: #1f7de2;
+    float: right;
+    margin-top: -12px;
+}
+/*.accordion-section .panel-default .panel-title a.collapsed:after {
+    content: "\f107";
+}*/
+/*.accordion-section .panel-default .panel-body {
+    font-size: 1.2rem;
+}*/
